@@ -131,7 +131,7 @@
 
             <footer class="footer">
                 <div class="w-100 clearfix">
-                    <span class="text-center text-sm-left d-md-inline-block">Copyright © Abdul Rahman Saleh</span>
+                    <span class="text-center text-sm-left d-md-inline-block">Copyright ©2021 Abdul Rahman Saleh</span>
                     <span class="float-none float-sm-right mt-1 mt-sm-0 text-center">Template by <a href="http://lavalite.org/" class="text-dark" target="_blank">Lavalite <i class="fa fa-heart text-danger"></i></a></span>
                 </div>
             </footer>

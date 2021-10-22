@@ -1,4 +1,4 @@
-@extends('master.app')
+@extends('layouts.app')
 
 @section('cssStyle')
 @endsection
@@ -8,19 +8,19 @@
 @endsection
 
 @section('iconHeader')
-<i class="ik ik-box bg-blue"></i>
+<i class="ik ik-star bg-blue"></i>
 @endsection
 
 @section('titleHeader')
-Product
+Arsip Surat
 @endsection
 
 @section('subtitleHeader')
-Halaman Data Barang
+Halaman Data Arsip Surat
 @endsection
 
 @section('breadcrumb')
-<li class="breadcrumb-item active" aria-current="page">Arsip</li>
+<li class="breadcrumb-item active" aria-current="page">Arsip Surat</li>
 @endsection
 
 @section('content')
@@ -29,6 +29,10 @@ Halaman Data Barang
         <div class="row">
             <div class="col-sm-12">
                 <div class="card-body">
+                    <!-- <h3>Arsip Surat</h3> -->
+                    <div class="mb-4">
+                    <a>Berikut ini adalah surat-surat yang telah terbit dan diarsipkan.</a><br><a>Klik "Lihat" pada kolom aksi untuk menampilkan surat.</a><br>
+                    </div>
                     <table id="multi-colum-dt"
                         class="table table-striped table-bordered nowrap dataTables_wrapper dt-bootstrap4 data-table">
                         
@@ -58,6 +62,7 @@ Halaman Data Barang
                             </tr>
                         </tbody>
                     </table>
+                    <a href="{{route('arsip.create')}}"><button type="button" class="btn btn-dark">Arsipkan Surat</button></a>
                 </div>
             </div>
         </div>

@@ -21,9 +21,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/arsip', [ArsipController::class, 'index'])->name('arsip');
+Route::get('/arsip/create', [ArsipController::class, 'create'])->name('arsip.create');
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
-Route::resource('arsip', ArsipController::class)->only('index');
+Route::resource('arsip', ArsipController::class)->only('index', 'create');
 Route::resource('about', AboutController::class)->only('index');
 
