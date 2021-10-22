@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ArsipController;
+use App\Http\Controllers\AboutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.app');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/arsip', [ArsipController::class, 'index'])->name('arsip');
+
+Route::get('/about', [AboutController::class, 'index'])->name('about');
+
+Route::resource('arsip', ArsipController::class)->only('index');
+Route::resource('about', AboutController::class)->only('index');
+
