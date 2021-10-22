@@ -16,7 +16,7 @@ Arsip Surat
 @endsection
 
 @section('subtitleHeader')
-Halaman Data Arsip Surat
+Data Arsip Surat
 @endsection
 
 @section('breadcrumb')

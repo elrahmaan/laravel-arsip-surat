@@ -17,7 +17,7 @@ Arsip Surat >> Unggah
 @endsection
 
 @section('subtitleHeader')
-Halaman Unggah Arsip Surat
+Unggah Arsip Surat
 @endsection
 
 @section('breadcrumb')
