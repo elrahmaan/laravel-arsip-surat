@@ -56,7 +56,7 @@ Data Arsip Surat
                                 <td>{{$arsip->created_at}}</td>
                                 
                                 <td align="center">
-                                    <a href="#" class="btn btn-danger">Hapus</a>
+                                    <a href="/arsip/{{$arsip->id}}/delete"><button type="button" class="btn btn-danger" data-id="{{$arsip->id}}">Hapus</button></a>
                                     <a href="#" class="btn btn-warning" style="background-color:#ffc107; border:none;">Unduh</a>
                                     <a href="/arsip/{{$arsip->id}}/show" class="btn btn-primary">Lihat >></a>
                                 </td>

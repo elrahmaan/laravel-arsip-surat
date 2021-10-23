@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use App\Models\Arsip;
 
 class ArsipController extends Controller
@@ -103,6 +104,12 @@ class ArsipController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $arsip = Arsip::find($id);
+        if ($arsip->file_surat) {
+            File::delete(public_path($arsip->file_surat));
+            // unlink($file_path);
+        }
+        $arsip->delete();
+        return redirect()->route('arsip.index');
     }
 }
