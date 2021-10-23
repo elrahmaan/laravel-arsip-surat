@@ -48,11 +48,12 @@ Data Arsip Surat
 
                         <tbody>
                             
+                        @foreach($arsips as $arsip)
                             <tr>
-                                <td>2020/PD3/TU/001</td>
-                                <td>Pengumuman</td>
-                                <td>Nota Dinas WFH</td>
-                                <td>2021-06-21 17:23</td>
+                                <td>{{$arsip->nomor}}</td>
+                                <td>{{$arsip->category->nama}}</td>
+                                <td>{{$arsip->judul}}</td>
+                                <td>{{$arsip->created_at}}</td>
                                 
                                 <td align="center">
                                     <a href="#" class="btn btn-danger">Hapus</a>
@@ -60,6 +61,7 @@ Data Arsip Surat
                                     <a href="#" class="btn btn-primary">Lihat >></a>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                     <a href="{{route('arsip.create')}}"><button type="button" class="btn btn-dark">Arsipkan Surat</button></a>

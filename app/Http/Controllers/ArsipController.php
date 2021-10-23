@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Arsip;
-use App\Models\Category;
 
 class ArsipController extends Controller
 {
@@ -15,7 +14,8 @@ class ArsipController extends Controller
      */
     public function index()
     {
-        return view('arsip.index');
+        $arsips = Arsip::all();
+        return view('arsip.index', compact('arsips'));
     }
 
     /**

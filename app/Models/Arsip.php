@@ -13,4 +13,9 @@ class Arsip extends Model
     protected $fillable = [
         'nomor', 'judul', 'file_surat', 'category_id'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

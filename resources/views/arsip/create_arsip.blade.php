@@ -89,7 +89,7 @@ Unggah Arsip Surat
                         </div>
                     </div>
                     
-                    <button class="btn btn-light"> << Kembali</button>
+                    <a href="{{route('arsip.index')}}"><button class="btn btn-light" type="button"> << Kembali</button></a>
                     <button type="submit" class="btn btn-primary mr-2">Simpan</button>
                 </form>
             </div>
