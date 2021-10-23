@@ -66,9 +66,10 @@ class ArsipController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        return view('arsip.show_arsip');
+        $arsip = Arsip::find($id);
+        return view('arsip.show_arsip', compact('arsip'));
     }
 
     /**

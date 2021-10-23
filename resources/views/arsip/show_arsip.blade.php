@@ -36,7 +36,7 @@ Lihat Arsip Surat
                                 <a><span class="align-middle" style="font-size: 14px;">Nomor</span></a>
                             </div>
                             <div class=" text-right">
-                                <a  style="font-size: 14px;">: &ensp;<strong>2020/PD3/TU/001</strong></a>
+                                <a  style="font-size: 14px;">: &ensp;<strong>{{$arsip->nomor}}</strong></a>
                             </div>
                         </div>
                         <div class="row align-items-center mb-1">
@@ -44,7 +44,7 @@ Lihat Arsip Surat
                                 <a><span class="align-middle" style="font-size: 14px;">Kategori</span></a>
                             </div>
                             <div class=" text-right">
-                                <a  style="font-size: 14px;">: &ensp;<strong>Pengumuman</strong></a>
+                                <a  style="font-size: 14px;">: &ensp;<strong>{{$arsip->category->nama}}</strong></a>
                             </div>
                         </div>
                         <div class="row align-items-center mb-1">
@@ -52,7 +52,7 @@ Lihat Arsip Surat
                                 <a><span class="align-middle" style="font-size: 14px;">Judul</span></a>
                             </div>
                             <div class=" text-right">
-                                <a  style="font-size: 14px;">: &ensp;<strong>Nota Dinas WFH</strong></a>
+                                <a  style="font-size: 14px;">: &ensp;<strong>{{$arsip->judul}}</strong></a>
                             </div>
                         </div>
                         <div class="row align-items-center mb-1">
@@ -60,15 +60,15 @@ Lihat Arsip Surat
                                 <a><span class="align-middle" style="font-size: 14px;">Waktu Unggah</span></a>
                             </div>
                             <div class=" text-right">
-                                <a  style="font-size: 14px;">: &ensp;<strong>2021-06-21 17:23</strong></a>
+                                <a  style="font-size: 14px;">: &ensp;<strong>{{$arsip->created_at}}</strong></a>
                             </div>
                         </div>
                         
                     </div>
                     <div class="mb-4">
-                    <embed src="/uploads/arsip/D3 - Soal Praktek Pemrograman 2021.pdf" type="application/pdf" width="100%" height="500px" />
+                    <embed src="{{asset($arsip->file_surat)}}" type="application/pdf" width="100%" height="500px" />
                     </div>
-                    <button class="btn btn-light"><strong><< Kembali</strong></button>
+                    <a href="{{route('arsip.index')}}"><button type="button" class="btn btn-light"><strong><< Kembali</strong></button></a>
                     <button type="submit" class="btn btn-dark ml-3">Unduh</button>
                 </div>
             </div>

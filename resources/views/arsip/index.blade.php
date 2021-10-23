@@ -58,7 +58,7 @@ Data Arsip Surat
                                 <td align="center">
                                     <a href="#" class="btn btn-danger">Hapus</a>
                                     <a href="#" class="btn btn-warning" style="background-color:#ffc107; border:none;">Unduh</a>
-                                    <a href="#" class="btn btn-primary">Lihat >></a>
+                                    <a href="/arsip/{{$arsip->id}}/show" class="btn btn-primary">Lihat >></a>
                                 </td>
                             </tr>
                             @endforeach

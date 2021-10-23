@@ -23,7 +23,7 @@ Auth::routes();
 Route::get('/arsip', [ArsipController::class, 'index'])->name('arsip');
 Route::get('/arsip/create', [ArsipController::class, 'create'])->name('arsip.create');
 Route::post('/arsip/store', [ArsipController::class, 'store'])->name('arsip.store');
-Route::get('/arsip/show', [ArsipController::class, 'show'])->name('arsip.show');
+Route::get('/arsip/{id}/show', [ArsipController::class, 'show'])->name('arsip.show');
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
