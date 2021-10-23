@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Arsip extends Model
 {
-    protected $table = 'arsip';
+    protected $table = 'arsips';
     public $timestamps = true;
 
     protected $fillable = [
-        'id', 'nomor', 'judul', 'category_id'
+        'nomor', 'judul', 'file_surat', 'category_id'
     ];
 }

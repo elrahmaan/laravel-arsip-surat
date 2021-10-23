@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Arsip;
+use App\Models\Category;
 
 class ArsipController extends Controller
 {
@@ -23,7 +25,8 @@ class ArsipController extends Controller
      */
     public function create()
     {
-        return view('arsip.create_arsip');
+        $categories = Category::all();
+        return view('arsip.create_arsip', compact('categories'));
     }
 
     /**
@@ -34,7 +37,27 @@ class ArsipController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nomor' => 'required',
+            'judul' => 'required',
+            'file_surat' => 'required',
+            'category_id' =>'required',
+        ]);
+        // dd($request->product_category);
+        if($request->file('file_surat')){
+            $surat_file = $validatedData['file_surat'];
+            $surat_name =  time() . ".". $surat_file->getClientOriginalExtension();
+            $path = public_path('/uploads/file-surat/');
+            $surat_file->move($path, $surat_name);
+            $arisp_surat = '/uploads/file-surat/' . $surat_name;
+        }
+        Arsip::create([
+            'nomor' => $request->nomor,
+            'judul' => $request->judul,
+            'file_surat' => $arisp_surat,
+            'category_id' => $request->category_id
+        ]);
+        return redirect()->route('arsip.index');
     }
 
     /**

@@ -31,7 +31,7 @@ Unggah Arsip Surat
         <div class="card">
             <div class="card-body">
             
-                <form class="text-left p-3">
+                <form class="text-left p-3" action="{{route('arsip.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-4">
                         <a>Unggah surat yang telah terbit pada form ini untuk diarsipkan.</a><br>
@@ -45,7 +45,7 @@ Unggah Arsip Surat
                                 <span class="input-group-prepend">
                                     <label class="input-group-text"><i class="ik ik-edit"></i></label>
                                 </span>
-                                <input type="text" class="form-control" placeholder="">
+                                <input type="text" class="form-control" name="nomor" placeholder="Nomor Surat">
                             </div>
                         </div>
                     </div>
@@ -57,12 +57,10 @@ Unggah Arsip Surat
                                 <span class="input-group-prepend">
                                     <label class="input-group-text"><i class="ik ik-edit"></i></label>
                                 </span>
-                                <select name="" class="form-control" id="categoryInput">
-                                
-                                    <option value="">Undangan</option>
-                                    <option value="">Pengumuman</option>
-                                    <option value="">Nota Dinas`</option>
-                                    <option value="">Pemberitahuan</option>
+                                <select name="category_id" class="form-control" id="categoryInput">
+                                @foreach($categories as $category)
+                                    <option value="{{$category->id}}">{{$category->nama}}</option>
+                                @endforeach
                                 </select>
                             </div>
                         </div>
@@ -74,7 +72,7 @@ Unggah Arsip Surat
                                 <span class="input-group-prepend">
                                     <label class="input-group-text"><i class="ik ik-edit"></i></label>
                                 </span>
-                                <input type="text" class="form-control" placeholder="">
+                                <input type="text" class="form-control" name="judul" placeholder="Judul">
                             </div>
                         </div>
                     </div>
@@ -86,7 +84,7 @@ Unggah Arsip Surat
                                 <span class="input-group-prepend">
                                     <label class="input-group-text"><i class="ik ik-edit"></i></label>
                                 </span>
-                                <input type="file" class="form-control" name="" style="padding:4px;">
+                                <input type="file" class="form-control" name="file_surat" style="padding:4px;">
                             </div>
                         </div>
                     </div>
