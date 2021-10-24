@@ -47,7 +47,7 @@ Edit Arsip Surat
                                 <span class="input-group-prepend">
                                     <label class="input-group-text"><i class="ik ik-edit"></i></label>
                                 </span>
-                                <input type="text" class="form-control" name="nomor" placeholder="Nomor Surat" value="{{$arsip->nomor}}">
+                                <input type="text" class="form-control" name="nomor" placeholder="Nomor Surat" value="{{$arsip->nomor}}" required>
                             </div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@ Edit Arsip Surat
                                 <span class="input-group-prepend">
                                     <label class="input-group-text"><i class="ik ik-edit"></i></label>
                                 </span>
-                                <input type="text" class="form-control" name="judul" placeholder="Judul" value="{{$arsip->judul}}">
+                                <input type="text" class="form-control" name="judul" placeholder="Judul" value="{{$arsip->judul}}" required>
                             </div>
                         </div>
                     </div>
@@ -87,7 +87,7 @@ Edit Arsip Surat
                                     <label class="input-group-text"><i class="ik ik-edit"></i></label>
                                 </span>
                                 <input type="file" class="form-control" name="file_surat" style="padding:4px;">
-                                <input type="hidden" class="form-control" name="old_file" style="padding:4px;" value="{{$arsip->file_surat}}">
+                                <input type="hidden" class="form-control" name="old_file" style="padding:4px;" value="{{$arsip->file_surat}}" required>
                             </div>
                             &nbsp;&nbsp;&nbsp; <strong>{{substr($arsip->file_surat, 31, 300)}}</strong>
                         </div>

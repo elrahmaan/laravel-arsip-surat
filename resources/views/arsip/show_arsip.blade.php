@@ -70,7 +70,7 @@ Lihat Arsip Surat
                     </div>
                     <a href="{{route('arsip.index')}}"><button type="button" class="btn btn-light"><strong><< Kembali</strong></button></a>
                     <a href="/arsip/{{$arsip->id}}/download"><button type="button" class="btn btn-dark ml-3"><strong>Unduh</strong></button></a>
-                    <a href="/arsip/{{$arsip->id}}/edit"><button type="button" class="btn btn-warning ml-3"><strong>Edit/Ganti File</strong></button></a>
+                    <a href="/arsip/{{$arsip->id}}/edit"><button type="button" class="btn btn-warning ml-3"><strong>Edit / Ganti File</strong></button></a>
                 </div>
             </div>
         </div>

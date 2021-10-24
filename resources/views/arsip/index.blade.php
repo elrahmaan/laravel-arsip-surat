@@ -33,6 +33,14 @@ Data Arsip Surat
                     <div class="mb-4">
                     <a>Berikut ini adalah surat-surat yang telah terbit dan diarsipkan.</a><br><a>Klik "Lihat" pada kolom aksi untuk menampilkan surat.</a><br>
                     </div>
+                    @if(session('success'))
+                        <div class="alert alert-success alert-dismissible mb-2 text-center" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            {{session('success')}}
+                        </div>
+                    @endif
                     <table id="multi-colum-dt"
                         class="table table-striped table-bordered nowrap dataTables_wrapper dt-bootstrap4 data-table">
                         

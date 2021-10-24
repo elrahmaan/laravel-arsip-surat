@@ -59,7 +59,7 @@ class ArsipController extends Controller
             'file_surat' => $arsip_surat,
             'category_id' => $request->category_id
         ]);
-        return redirect()->route('arsip.index');
+        return redirect()->route('arsip.index')->with('success', 'Surat berhasil diarsipkan');
     }
 
     /**
@@ -127,7 +127,7 @@ class ArsipController extends Controller
         $validatedData['category_id'] = $request->category_id;
         Arsip::where('id', $id)->update($validatedData);
 
-        return redirect()->route('arsip.index');
+        return redirect()->route('arsip.index')->with('success', 'Arsip surat berhasil diupdate');
     }
 
     /**
