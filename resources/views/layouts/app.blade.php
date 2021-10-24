@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="/style/dist/css/theme.min.css">
     @yield('cssStyle')
     <script src="/style/src/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -81,11 +82,11 @@
                     <div class="nav-container">
                         <nav id="main-menu-navigation" class="navigation-main">
                             <div class="nav-lavel">Menu</div>
-                            <div class="nav-item {{Route::is('arsip.index') ? 'active' : ''}}">
+                            <div class="nav-item {{Route::is('arsip.index') || Route::is('arsip.create') || Route::is('arsip.show') || Route::is('arsip.edit') ? 'active' : ''}}">
                                 <a href="{{route('arsip.index')}}"><i class="ik ik-star"></i><span>Arsip</span></a>
                             </div>
-                            <div class="nav-item {{Route::is('about.index') ? 'active' : ''}}">
-                                <a href="{{route('about.index')}}"><i class="ik ik-info"></i><span>About</span></a>
+                            <div class="nav-item {{Route::is('about') ? 'active' : ''}}">
+                                <a href="{{route('about')}}"><i class="ik ik-info"></i><span>About</span></a>
                             </div>
                         </nav>
                     </div>
@@ -145,6 +146,7 @@
     <script>
         window.jQuery || document.write('<script src="/style/src/js/vendor/jquery-3.3.1.min.js"><\/script>')
     </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/style/plugins/popper.js/dist/umd/popper.min.js"></script>
     <script src="/style/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/style/plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>

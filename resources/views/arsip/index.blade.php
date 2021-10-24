@@ -56,8 +56,8 @@ Data Arsip Surat
                                 <td>{{$arsip->created_at}}</td>
                                 
                                 <td align="center">
-                                    <a href="/arsip/{{$arsip->id}}/delete"><button type="button" class="btn btn-danger" data-id="{{$arsip->id}}">Hapus</button></a>
-                                    <a href="#" class="btn btn-warning" style="background-color:#ffc107; border:none;">Unduh</a>
+                                    <a href="#" class="btn btn-danger delete" data-id="{{$arsip->id}}" data-nomor="{{$arsip->nomor}}">Hapus</a>
+                                    <a href="/arsip/{{$arsip->id}}/download" class="btn btn-warning" style="background-color:#ffc107; border:none;">Unduh</a>
                                     <a href="/arsip/{{$arsip->id}}/show" class="btn btn-primary">Lihat >></a>
                                 </td>
                             </tr>
@@ -70,4 +70,42 @@ Data Arsip Surat
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $('.delete').click(function() {
+        var arsip_id = $(this).attr('data-id');
+        var nomor = $(this).attr('data-nomor');
+
+        Swal.fire({
+            title: 'Apakah anda yakin ingin menghapus arsip surat ini ?',
+            text: "Nomor surat: " + nomor,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Arsip surat berhasil dihapus'
+                })
+                window.location = "/arsip/" + arsip_id + "/delete"
+            }
+        })
+    })
+</script>
+
 @endsection
