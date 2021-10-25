@@ -56,7 +56,7 @@ Profil Mahasiswa
                                     <a><span class="align-middle" style="font-size: 14px;">Tanggal</span></a>
                                 </div>
                                 <div class=" text-right">
-                                    <a  style="font-size: 14px;">: &ensp;<strong>24 Oktober 2021</strong></a>
+                                    <a  style="font-size: 14px;">: &ensp;<strong>22 - 25 Oktober 2021</strong></a>
                                 </div>
                             </div>
                         </div>
