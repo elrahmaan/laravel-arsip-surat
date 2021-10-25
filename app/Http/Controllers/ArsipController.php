@@ -114,7 +114,6 @@ class ArsipController extends Controller
             // menyimpan data file yang diupload ke variabel $file
             $surat_name =  time(). "-". $surat_file->getClientOriginalName() . ".". $surat_file->getClientOriginalExtension();
             // isi dengan nama folder tempat kemana file diupload
-
             $path = public_path('/uploads/file-surat/');
             File::makeDirectory($path, $mode = 0777, true, true);
             $surat_file->move($path, $surat_name);
