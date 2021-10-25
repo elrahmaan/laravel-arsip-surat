@@ -95,21 +95,6 @@ Data Arsip Surat
             cancelButtonText: 'Batal'
         }).then((result) => {
             if (result.isConfirmed) {
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000,
-                    timerProgressBar: true,
-                    didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                    }
-                })
-                Toast.fire({
-                    icon: 'success',
-                    title: 'Arsip surat berhasil dihapus'
-                })
                 window.location = "/arsip/" + arsip_id + "/delete"
             }
         })

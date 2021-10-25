@@ -144,7 +144,7 @@ class ArsipController extends Controller
             // unlink($file_path);
         }
         $arsip->delete();
-        return redirect()->route('arsip.index');
+        return redirect()->route('arsip.index')->with('success', 'Arsip surat berhasil dihapus');
     }
     public function download($id)
     {
